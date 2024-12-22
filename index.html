@@ -110,7 +110,6 @@
     <div class="row text-center mb-3">
       <div class="col">
         <h2>Orders</h2>
-        <div 
         <form name="Toko-Buku">
             <div class="row">
                 <!-- Nama -->
@@ -193,12 +192,14 @@
 
 <script>
   const scriptURL = 'https://script.google.com/macros/s/AKfycbxoRQ7L2grP44xVwkp0c6NxBSiVOfw0HqcefXVtNB0lgHmNSAdk41HpUSdHT-joEF1U/exec'
-  const form = document.forms['Toko-Buku']
-       form.addEventListener('submit', e => {
-         e.preventDefault()
-  fetch(scriptURL, { method: 'POST', body: new FormData(form)})
-  .then(response => console.log('Success!', response))
-  .catch(error => console.error('Error!', error.message))
+  const form = document.forms["Toko-Buku"]
+
+  form.addEventListener('submit', e => {
+      e.preventDefault()
+      fetch(scriptURL, { method: 'POST', body: new FormData(form)
+    }
+  ).then(response => console.log('Success!', response)
+  ).catch(error => console.error('Error!', error.message))
   })
   </script>
   </body>
