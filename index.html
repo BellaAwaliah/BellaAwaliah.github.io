@@ -25,13 +25,13 @@
       <div class="collapse navbar-collapse" id="navbarNav">
         <ul class="navbar-nav ms-auto">
           <li class="nav-item">
-            <a class="nav-link active" href="#home"><i class="fas fa-home"></i> Home</a>
+            <a class="nav-link active" href="#Home"><i class="fas fa-home"></i> Home</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="#about"><i class="fas fa-info-circle"></i> About</a>
+            <a class="nav-link" href="#About"><i class="fas fa-info-circle"></i> About</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="#order"><i class="fas fa-shopping-cart"></i> Order</a>
+            <a class="nav-link" href="#Orders"><i class="fas fa-shopping-cart"></i>Orders</a>
           </li>
         </ul>
       </div>
@@ -111,7 +111,7 @@
       <div class="col">
         <h2>Orders</h2>
         <div 
-        <form>
+        <form name="Toko-Buku">
             <div class="row">
                 <!-- Nama -->
                 <div class="col-md-6 mb-3">
@@ -191,6 +191,17 @@
 </footer>
 <!-- End Footer -->
 
+<script>
+  const scriptURL = 'https://script.google.com/macros/s/AKfycbxoRQ7L2grP44xVwkp0c6NxBSiVOfw0HqcefXVtNB0lgHmNSAdk41HpUSdHT-joEF1U/exec'
+  const form = document.forms['Toko-Buku']
+       form.addEventListener('submit', e => {
+         e.preventDefault()
+  fetch(scriptURL, { method: 'POST', body: new FormData(form)})
+  .then(response => console.log('Success!', response))
+  .catch(error => console.error('Error!', error.message))
+  })
+  </script>
+  </body>
 
 
 </html>
